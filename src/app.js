@@ -8,14 +8,27 @@ import RestaurantMenu from "./components/RestaurantMenu";
 // import Grocerry from "./components/Grocerry";
 import Error from "./components/Error"
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom"
+import UserContext from "./utils/UserContext";
+import { useState , useEffect } from "react";
 
 
 
 const AppLayOut = ()=> {
+
+const [userName , setUserName] = useState();
+
+useEffect(()=>{
+    const data = {name : "Mickey Mouse"}
+    setUserName(data.name);
+},[])
+
+
     return (
         <div className="app">
+        <UserContext.Provider value={{loggedInUser : userName}}>    
          <Header />
          <Outlet />
+         </UserContext.Provider>
         </div>
     )
 }
