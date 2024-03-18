@@ -10,7 +10,8 @@ import Error from "./components/Error"
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom"
 import UserContext from "./utils/UserContext";
 import { useState , useEffect } from "react";
-
+import appStore from "./utils/appStore";
+import { Provider } from "react-redux";
 
 
 const AppLayOut = ()=> {
@@ -24,12 +25,14 @@ useEffect(()=>{
 
 
     return (
+        <Provider store={appStore}>
         <div className="app">
         <UserContext.Provider value={{loggedInUser : userName}}>    
          <Header />
          <Outlet />
          </UserContext.Provider>
         </div>
+        </Provider>
     )
 }
 
