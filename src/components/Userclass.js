@@ -48,9 +48,9 @@ class Userclass extends React.Component{
         return <div>
             
             <h4>I am UserClass</h4>
-            <h2>{login}</h2>
-            <h2>{url}</h2>
-            <img src={avatar_url} />
+            
+            
+            
 
              {/* <h4>{this.props.name}</h4>
             <h4>{this.props.location}</h4> */}
