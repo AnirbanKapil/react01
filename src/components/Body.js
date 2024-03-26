@@ -4,6 +4,7 @@ import { useState , useEffect } from "react";
 import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { sum } from "./sum ";
 
 
 
@@ -147,7 +148,7 @@ const Body = () => {
  
   const[searchList,setSearchList] = useState("");
   
-
+  console.log("sum fn" , sum)
     useEffect(()=>{
         fetchData()
     },[])
