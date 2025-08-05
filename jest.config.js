@@ -196,7 +196,9 @@ const config = {
 };
 
 module.exports = {
-  transform: {
-    '^.+\\.jsx?$': 'babel-jest',
-  },
+  // Indicates which files should be treated as test files
+  testMatch: ['**/__tests__/**/*.js', '**/?(*.)+(spec|test).js'],
+
+  // Indicates which environment to use for testing
+  testEnvironment: 'node',
 };
